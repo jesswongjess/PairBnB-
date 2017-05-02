@@ -29,6 +29,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "figaro"
 gem "pusher"
+gem 'omniauth-facebook'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
