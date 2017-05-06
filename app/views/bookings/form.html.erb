@@ -1,0 +1,26 @@
+<%= f.hidden_field :listing_id, value: @listing.id %>
+<!--#what is this line for?  -->
+
+<%= form_for [@listing,  @booking] , do |f| %>
+  <div class="num_guests">
+    <%= f.label :num_guests %>
+    <%= f.text_field :email, type: 'email' %>
+  </div>
+
+  <div class="start_date">
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date %>
+  </div>
+
+  <div class="end_date">
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date %>
+  </div>
+
+  <div class="max_guests">
+    <%= f.label :max_guests %>
+    <%= f.number_feild :max_guests %>
+  </div>
+
+  <%= f.submit "Submit Booking" %>
+  <% end %>

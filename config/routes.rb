@@ -1,13 +1,28 @@
 Rails.application.routes.draw do
-  root 'static#home'
-  # redirect to homepage
-  resources :listings #resouce gives id in rake routes; resources give user_id(param)
-  resources :tags 
+  resources :passwords, controller: "clearance/passwords", only: [:create, :new]
+  resource :session, controller: "clearance/sessions", only: [:create]
 
-  resources :users do
-    resources :listings
+  resources :users, controller: "users", only: [:create] do
+    resource :password,
+      controller: "clearance/passwords",
+      only: [:create, :edit, :update]
   end
 
-  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+  get "/sign_in" => "clearance/sessions#new", as: "sign_in"
+  delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+  get "/sign_up" => "clearance/users#new", as: "sign_up"
+  root 'static#home'
+  # if you are using Clearance gem, $ all clearance:routes
+  #it will generate signin, signup and logout path in session controller
+  # also generate password path. 
+  # redirect to homepage
+  resources :listings do
+    resources :bookings, only: [:create, :new]
+  end
+
+  resources :tags
+get "/auth/:provider/callback" =>"sessions#create_form_omniauth"
+
+
   # callback URL, URL that redirects the user from Facebook to your app
 end

@@ -1,0 +1,27 @@
+<p>THIS IS LISTING SHOW</p>
+
+<h1> Title: <%= @listing.title %></h1>
+<p> Description: <%= @listing.description %> </p>
+<p> property_type: <%= @listing.property_type %> </p>
+<p> Room Type: <%= @listing.room_type %> </p>
+<p> Guest: <%= @listing.guest %> </p>
+<p> Bedroom: <%= @listing.bedroom %> </p>
+<p> Bathroom: <%= @listing.bathroom %> </p>
+<p> Price: <%= @listing.price %> </p>
+<p> Address: <%= @listing.address %> </p>
+
+<%= form_for [@listing, @booking] do |f| %> #form_for is an element if i would like to have @listing and @booking's elememnt be ruby code. 
+<div class="start_date">
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+</div>
+
+<div class="end_date">
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+</div>
+
+<button type="submit">Confirm Booking</button>
+
+<% end %>
+</form>
