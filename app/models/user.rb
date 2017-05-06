@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   include Clearance::User
   has_many :authentications, :dependent => :destroy
-
-
+  has_many :listings
+  has_many :bookings #user can have many booking
 #In app/models/user.rb    has_many :authentications, :dependent => :destroy
 # create_with_auth_hash will create a User object based on the information given by the provider
 # This setup is meant for the user to key in his/her own Facebook password to log in to our app and such that we need not store this user’s password

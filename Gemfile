@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem "figaro"
 gem "pusher"
 gem 'omniauth-facebook'
+gem 'faker'
+gem 'bootstrap-sass'
 # gem "fog"
 
 # Use Redis adapter to run Action Cable in production

@@ -39,8 +39,13 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    autoprefixer-rails (6.7.7.2)
+      execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     clearance (1.16.0)
@@ -59,6 +64,8 @@ GEM
       activemodel
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
@@ -82,7 +89,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.4)
+    mail (2.6.5)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (3.1)
@@ -171,7 +178,7 @@ GEM
     tilt (2.0.7)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
+    turbolinks-source (5.0.3)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -189,9 +196,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   byebug
   clearance
   coffee-rails (~> 4.2)
+  faker
   figaro
   jbuilder (~> 2.5)
   jquery-rails
