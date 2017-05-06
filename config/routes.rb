@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'braintree#index'
+
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
@@ -14,10 +17,10 @@ Rails.application.routes.draw do
   root 'static#home'
   # if you are using Clearance gem, $ all clearance:routes
   #it will generate signin, signup and logout path in session controller
-  # also generate password path. 
+  # also generate password path.
   # redirect to homepage
   resources :listings do
-    resources :bookings, only: [:create, :new]
+    resources :bookings, only: [:create, :new, :show]
   end
 
   resources :tags
