@@ -33,6 +33,10 @@ gem 'omniauth-facebook'
 gem 'faker'
 gem 'bootstrap-sass'
 gem 'braintree'
+gem "letter_opener", :group => :development
+gem 'sidekiq'
+gem 'rails_12factor'
+
 # gem "fog"
 
 # Use Redis adapter to run Action Cable in production
