@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     # one listing can only available for one booking.
     if @booking.save
       # redirect to booking#show
-      flash[:success] = "Now you can stay in my house...."
+      flash[:success] = "Welcome to my house...."
       redirect_to listing_booking_path(@listing, @booking)
     else
       flash[:danger] = "Booking failed!"

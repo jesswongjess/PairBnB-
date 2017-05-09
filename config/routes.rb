@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'braintree#index'
-  root 'get braintree/new'
+  root 'welcome#index'
+  get 'braintree/new'
   post 'braintree/checkout'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
